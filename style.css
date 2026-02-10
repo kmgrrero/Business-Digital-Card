@@ -76,24 +76,24 @@ body {
     z-index: 5;
 }
 
-/* ✅ COMPANY LOGO: ALWAYS IN FRONT */
-.company-logo-wrapper {
-    position: absolute;   /* ✅ overlay the whole card */
-    top:15px;           /* adjust if needed */
-    right: 18px;          /* adjust if needed */
-    z-index: 100;         /* ✅ in front of everything */
+@media (max-width: 640px) {
+  .company-logo-wrapper {
+    position: absolute;
+    margin-top: -110px;
+    left: 72%;
+    transform: translateX(-50%);
+    z-index: 9999; /* ✅ above header */
+  }
 
-    display: flex;
-    margin: 0;            /* ✅ remove old margin positioning */
-    pointer-events: none; /* optional: prevents blocking clicks */
-}
-
-.company-logo {
-    height: 75px;
+  /* ✅ control logo size HERE, not with scale */
+  .company-logo {
+    height: 55px;   /* adjust size safely */
     width: auto;
-    object-fit: contain;
+    object-fit: inherit;
     opacity: 0.8;
+  }
 }
+
 
 .info-section {
     text-align: center;
@@ -286,7 +286,7 @@ body {
     }
 
     .card-content {
-        padding: 80px 16px 16px;
+        padding: 25px 16px 16px;
     }
 
     .name {
